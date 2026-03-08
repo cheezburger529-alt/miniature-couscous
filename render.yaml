@@ -2,7 +2,7 @@ services:
   - type: web
     name: stagehost
     runtime: node
-    plan: free
+    plan: pro
     buildCommand: npm install --include=dev && npm run build
     startCommand: npm run start
     envVars:
