@@ -1,0 +1,119 @@
+Build a real-time web platform called **StageHost** where only the site owner can create and host live stages, while anyone can join the audience instantly without signing up.
+
+Core Concept:
+
+* Only the site owner (admin) can create and control stages.
+* Audience members can join stages via a shared link.
+* No account signup is required for audience members.
+* Users simply enter a display name to join.
+* Selected users can be moved onto the stage with camera and microphone.
+* Everyone else remains in the audience with access to a live chat.
+
+Host System:
+
+* Only one admin user exists (the site owner).
+* The admin logs in using a secret admin URL or password (example: /admin).
+* Only the admin can:
+
+  * Create a stage
+  * Start or end a stage
+  * Move people to the stage
+  * Mute or remove speakers
+  * Approve speaker requests
+
+User Flow:
+
+Admin (Host):
+
+1. Goes to /admin
+2. Enters a secret admin password
+3. Can create a new stage
+4. Gets a shareable stage link
+5. Controls speakers from the stage control panel
+
+Audience:
+
+1. Opens the stage link
+2. Enters a display name
+3. Joins the audience instantly
+4. Can watch speakers live
+5. Can send chat messages
+6. Can click “Request to Speak”
+
+Speaker:
+
+* When the host approves a request, the user is moved to the stage
+* Their camera and microphone activate
+* They appear in the speaker video grid
+
+Core Features:
+
+* Instant join with display name (no signup)
+* Host-only stage creation
+* WebRTC video for speakers
+* Live audience chat
+* Request-to-speak system
+* Speaker video grid
+* Viewer count
+* Host moderation controls
+
+Tech Stack:
+Frontend:
+
+* React
+* TailwindCSS
+
+Backend:
+
+* Node.js
+* Express
+
+Real-time communication:
+
+* Socket.io
+
+Video:
+
+* WebRTC using simple-peer or LiveKit
+
+Pages:
+
+Landing Page:
+
+* Simple homepage
+* Shows if a stage is live
+* Button to join the live stage
+
+Stage Room:
+
+* Main area: speaker video grid
+* Right side: audience chat
+* Bottom: audience controls (raise hand)
+
+Admin Dashboard (/admin):
+
+* Create stage
+* End stage
+* Manage speaker requests
+* Move users on/off stage
+* Mute/remove speakers
+
+Design Requirements:
+
+* Modern dark theme
+* Minimal clean interface
+* Mobile responsive
+* Speaker grid similar to Discord Stage or Twitter Spaces
+
+Security:
+
+* Only the admin password can create stages
+* Audience cannot create stages
+* Limit speakers to 8 people at once
+
+Project Requirements:
+
+* Generate full project structure
+* Include frontend and backend code
+* Include instructions to run locally
+* Add comments explaining WebRTC signaling and Socket.io events
