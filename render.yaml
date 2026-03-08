@@ -19,4 +19,4 @@ services:
 
 databases:
   - name: stagehost-db
-    plan: free
+    plan: pro
